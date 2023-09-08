@@ -1,5 +1,5 @@
 require('custom.Config.Telescope')
 require('custom.Config.Treesitter')
 require('custom.Config.Lsp')
-require('custom.Config.nvim-cmp')
+require('custom.Config.Nvim-cmp')
 require("custom.Config.Ufo")

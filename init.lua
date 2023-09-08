@@ -18,8 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Custom plugins ]]
 require('lazy').setup({
-  { import = 'custom.plugins' },
-  { import = 'kickstart.plugins' },
+  { import = 'custom.Plugins' },
+  { import = 'kickstart.Plugins' },
 }, {})
 
 -- [[ Setting options ]]
