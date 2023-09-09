@@ -6,10 +6,19 @@ return {
       {
         relculright = true,
         segments = {
-          { text = { " ", builtin.foldfunc }, click = "v:lua.ScFa" },
           {
-            text = { " ", builtin.lnumfunc, " " },
-            click = "v:lua.ScLa"
+            text = { builtin.foldfunc, ' ' },
+            click = "v:lua.ScFa",
+          },
+          {
+            text = {
+              function(args)
+                local st = tostring(args.lnum)
+                local maxwidth = 5
+                return string.rep(' ', maxwidth - #st) .. st .. ' '
+              end,
+            },
+            click = "v:lua.ScLa",
           },
           {
             text = { "%s" },
