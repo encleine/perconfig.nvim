@@ -19,10 +19,11 @@ vim.keymap.set('n', '<M-k>', ":m -2<CR>", { silent = true })
 vim.keymap.set('n', '<M-j>', ":m +1<CR>", { silent = true })
 
 -- [[ Switching windows ]]
-vim.keymap.set('n', '<C-h>', "<C-w>h", { silent = true })
-vim.keymap.set('n', '<C-j>', "<C-w>j", { silent = true })
-vim.keymap.set('n', '<C-k>', "<C-w>k", { silent = true })
-vim.keymap.set('n', '<C-l>', "<C-w>l", { silent = true })
+vim.keymap.set('n', '<C-h>', ":<C-U>TmuxNavigateLeft<cr>", { silent = true })
+vim.keymap.set('n', '<C-j>', ":<C-U>TmuxNavigateDown<cr>", { silent = true })
+vim.keymap.set('n', '<C-k>', ":<C-U>TmuxNavigateUp<cr>", { silent = true })
+vim.keymap.set('n', '<C-l>', ":<C-U>TmuxNavigateRight<cr>", { silent = true })
+vim.keymap.set('n', '<C-u>', ":<C-U>TmuxNavigatePrevious<cr>", { silent = true })
 -- [[ Close window ]]
 vim.keymap.set('n', '<leader>c', ":close<CR>", { silent = true })
 
