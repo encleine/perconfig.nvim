@@ -27,7 +27,7 @@ vim.keymap.set('n', '<C-u>', ":<C-U>TmuxNavigatePrevious<cr>", { silent = true }
 -- [[ Close window ]]
 vim.keymap.set('n', '<leader>c', ":close<CR>", { silent = true })
 
---
+-- Ex
 vim.keymap.set('n', '<leader>oo', ":Ex<CR>", { silent = true })
 
 -- [[ wraping text with parenthesis ]]
