@@ -50,15 +50,26 @@ end
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 
-
 local servers = {
   dockerls = {},
   marksman = {},
-  gopls = {},
+  gopls = {
+    cmd = { 'gopls' },
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        analyses = {
+          unusedparams = true,
+          fieldalignment = true
+        }
+      }
+    }
+  },
   sqlls = {},
   tsserver = {},
   jsonls = {},
   svelte = {},
+  emmet_language_server = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cssls = {},
 

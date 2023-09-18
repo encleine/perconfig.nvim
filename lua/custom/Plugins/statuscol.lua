@@ -13,9 +13,9 @@ return {
           {
             text = {
               function(args)
-                local st = tostring(args.lnum)
-                local maxwidth = 5
-                return string.rep(' ', maxwidth - #st) .. st .. ' '
+                local st = builtin.lnumfunc(args, args.lnum)
+                st = string.sub(st, 1, #st)
+                return string.rep(' ', 5 - #st) .. st .. ' '
               end,
             },
             click = "v:lua.ScLa",
