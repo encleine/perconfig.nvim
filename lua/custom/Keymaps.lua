@@ -27,8 +27,11 @@ vim.keymap.set('n', '<C-u>', ":<C-U>TmuxNavigatePrevious<cr>", { silent = true }
 -- [[ Close window ]]
 vim.keymap.set('n', '<leader>c', ":close<CR>", { silent = true })
 
--- Ex
-vim.keymap.set('n', '<leader>oo', ":Ex<CR>", { silent = true })
+-- [[]]
+vim.keymap.set('n', '<C-s>', ':w<CR>', { silent = true })
+
+-- [[ Neotree ]]
+vim.keymap.set('n', '<leader>oo', ":Neotree position=current<CR>", { silent = true })
 
 -- [[ wraping text with parenthesis ]]
 local function mmap(s, e)
@@ -38,8 +41,10 @@ local function mmap(s, e)
 		{ silent = true }
 	)
 end
+
 mmap('(', ')')
 mmap('[', ']')
 mmap('{', '}')
 mmap('"', '"')
 mmap("'", "'")
+mmap("`", "`")

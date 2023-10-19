@@ -38,7 +38,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- , highlight_group = "IncSearch"
+local Open_vim = vim.api.nvim_create_augroup('NeoOpenvim', { clear = true })
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    require('neo-tree.command').execute({
+      action = 'show',
+      position = 'current',
+    })
+  end,
+  group = Open_vim,
+  pattern = '*',
+})
+
 -- [[ Configs ]]
 --   [[ Telescope ]]
 --   [[ Treesitter ]]

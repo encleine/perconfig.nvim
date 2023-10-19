@@ -1,3 +1,6 @@
+local function author()
+  return [[hello world]]
+end
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -10,8 +13,9 @@ return {
 
     },
     sections = {
-      lualine_x = { 'buffers' },
+      lualine_x = { author },
       lualine_y = { 'filetype' },
+      lualine_z = { 'location', 'filename' }
     },
   },
 }

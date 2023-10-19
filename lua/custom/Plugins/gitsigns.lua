@@ -10,6 +10,7 @@ return {
       topdelete    = { text = '│' },
       changedelete = { text = '│' },
     },
+    current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
     on_attach = function(bufnr)
       vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
         { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
