@@ -1,6 +1,6 @@
 local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
+  -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- many times.
   --
   -- In this case, we create a function that lets us more easily define mappings specific
@@ -25,7 +25,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -51,8 +51,9 @@ end
 --  define the property 'filetypes' to the map in question.
 
 local servers = {
-  dockerls = {},
-  marksman = {},
+  -- dockerls = {},
+  -- marksman = {},
+  rust_analyzer = {},
   gopls = {
     cmd = { 'gopls' },
     settings = {
@@ -66,12 +67,12 @@ local servers = {
     }
   },
   sqlls = {},
-  tsserver = {},
+  -- tsserver = {},
   jsonls = {},
-  svelte = {},
-  emmet_language_server = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
-  cssls = {},
+  -- svelte = {},
+  -- emmet_language_server = {},
+  -- html = { filetypes = { 'html', 'twig', 'hbs' } },
+  -- cssls = {},
 
   lua_ls = {
     Lua = {

@@ -32,21 +32,9 @@ require('custom.Keymaps')
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank { timeout = 400, higroup = "IncSearch" }
+    vim.highlight.on_yank { timeout = 200, higroup = "IncSearch" }
   end,
   group = highlight_group,
-  pattern = '*',
-})
-
-local Open_vim = vim.api.nvim_create_augroup('NeoOpenvim', { clear = true })
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    require('neo-tree.command').execute({
-      action = 'show',
-      position = 'current',
-    })
-  end,
-  group = Open_vim,
   pattern = '*',
 })
 

@@ -33,7 +33,7 @@ return {
 
 	{ import = "custom.Plugins.treesitter" },
 	{ 'kevinhwang91/nvim-ufo',             dependencies = { 'kevinhwang91/promise-async' } },
-	{ import = "custom.Plugins.neoTree" },
+	{ import = "custom.Plugins.harpoon" },
 	{ import = "custom.Plugins.statuscol" },
 	{
 		"hexdigest/go-enhanced-treesitter.nvim",

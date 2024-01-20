@@ -23,15 +23,29 @@ vim.keymap.set('n', '<C-h>', ":<C-U>TmuxNavigateLeft<cr>", { silent = true })
 vim.keymap.set('n', '<C-j>', ":<C-U>TmuxNavigateDown<cr>", { silent = true })
 vim.keymap.set('n', '<C-k>', ":<C-U>TmuxNavigateUp<cr>", { silent = true })
 vim.keymap.set('n', '<C-l>', ":<C-U>TmuxNavigateRight<cr>", { silent = true })
-vim.keymap.set('n', '<C-u>', ":<C-U>TmuxNavigatePrevious<cr>", { silent = true })
+
 -- [[ Close window ]]
 vim.keymap.set('n', '<leader>c', ":close<CR>", { silent = true })
 
--- [[]]
+-- [[ Save file ]]
 vim.keymap.set('n', '<C-s>', ':w<CR>', { silent = true })
 
--- [[ Neotree ]]
-vim.keymap.set('n', '<leader>oo', ":Neotree position=current<CR>", { silent = true })
+-- [[ duplicate line ]]
+vim.keymap.set('n', '<C-d>', function()
+	local _, c = unpack(vim.api.nvim_win_get_cursor(0))
+	local cmd = string.format('"dyy"dp')
+	if (c ~= 0) then
+		cmd = string.format('"dyy"dp%dl', c)
+	end
+
+	vim.cmd.normal { cmd, bang = true }
+end, { silent = true })
+
+
+-- [[ stops yanking after paste over ]]
+vim.keymap.set('x', 'p', 'P', { silent = true })
+
+
 
 -- [[ wraping text with parenthesis ]]
 local function mmap(s, e)
