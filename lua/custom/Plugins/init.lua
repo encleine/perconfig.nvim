@@ -2,7 +2,6 @@
 --
 return {
 	'christoomey/vim-tmux-navigator',
-	'Exafunction/codeium.vim',
 	-- Git related plugins
 	'tpope/vim-fugitive',
 	'tpope/vim-rhubarb',
@@ -15,7 +14,9 @@ return {
 
 	{ import = "custom.Plugins.nvim-cmp" },
 
-	-- Useful plugin to show you pending keybinds.
+	{ "lukas-reineke/cmp-under-comparator" },
+	{ "nvim-neotest/nvim-nio" },
+	-- show pending keybinds.
 	{ 'folke/which-key.nvim',              opts = {} },
 
 	{ import = "custom.Plugins.gitsigns" },
@@ -32,12 +33,13 @@ return {
 	{ import = "custom.Plugins.telescope" },
 
 	{ import = "custom.Plugins.treesitter" },
+	{ import = "custom.Plugins.peepsight" },
+
 	{ 'kevinhwang91/nvim-ufo',             dependencies = { 'kevinhwang91/promise-async' } },
-	{ import = "custom.Plugins.harpoon" },
 	{ import = "custom.Plugins.statuscol" },
 	{
 		"hexdigest/go-enhanced-treesitter.nvim",
 		build = ":TSInstall go sql",
 		ft = "go",
-	},
+	}
 }
