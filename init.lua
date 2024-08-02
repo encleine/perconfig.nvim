@@ -2,6 +2,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+---@diagnostic disable-next-line: lowercase-global
+diagnostics = { disable = { 'missing-fields' } }
+
 -- Install lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -14,13 +17,18 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
+
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Custom plugins ]]
 require('lazy').setup({
-  { import = 'custom.Plugins' },
-  { import = 'kickstart.Plugins' },
-}, {})
+    { import = 'custom/Plugins' },
+    { import = 'kickstart/Plugins' },
+  },
+  { change_detection = { notify = false } }
+)
+
 
 -- [[ Setting options ]]
 require('custom.Options')

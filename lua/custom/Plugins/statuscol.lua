@@ -17,36 +17,37 @@ local function foldfunc(args)
   if width == 0 then return "" end
 
   local foldinfo = C.fold_info(args.wp, args.lnum)
-  -- I don't know of a better way to do this :\
-  local string = "%#String#"
+  local sep = "%#ErrorMsg#"
+  -- local sep = "%#String#"
   local level = foldinfo.level
+  local closed = foldinfo.lines > 0
+  local range = level < width and level or width
+  local start = foldinfo.start == args.lnum
 
   if level == 0 then
-    return string .. (" "):rep(width) .. "%*"
+    return (" "):rep(width) .. "%*"
   end
 
-  local closed = foldinfo.lines > 0
-
-  local range = level < width and level or width
   if args.virtnum ~= 0 then
     string = string .. "┃"
   elseif closed and level == 1 then
-    return string .. "🮰"
+    sep = sep .. "🮯"
   elseif closed then
-    string = string .. "┇"
-  elseif foldinfo.start == args.lnum and level == 1 then
-    string = string .. "┏"
-  elseif foldinfo.start == args.lnum then
-    string = string .. "┣"
+    sep = sep .. "┇"
+  elseif start and level == 1 then
+    sep = sep .. "┏"
+  elseif start then
+    sep = sep .. "┣"
   else
-    string = string .. "┃"
+    sep = sep .. "┃"
   end
+
 
   if range < width then
-    string = string .. (" "):rep(width - range)
+    sep = sep .. (" "):rep(width - range)
   end
 
-  return string .. "%*"
+  return sep .. "%*"
 end
 
 return {

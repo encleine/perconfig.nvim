@@ -9,6 +9,6 @@ return {
       "func_literal",
     }
 
-    peep.enable()
+    -- peep.enable()
   end
 }

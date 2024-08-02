@@ -37,9 +37,9 @@ local function handler(virtText, lnum, endLnum, width, truncate)
 	return newVirtText
 end
 
-require('ufo').setup({
+require('ufo').setup {
 	provider_selector = function(bufnr, filetype, buftype)
 		return { 'treesitter', 'indent' }
 	end,
 	fold_virt_text_handler = handler
-})
+}

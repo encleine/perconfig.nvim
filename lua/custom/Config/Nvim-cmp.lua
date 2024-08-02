@@ -3,6 +3,11 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+require('dotenv').setup({
+  enable_on_load = true, -- will load your .env file upon loading a buffer
+  verbose = false,       -- show error notification if .env file is not found and if .env is loaded
+})
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -57,4 +62,19 @@ cmp.setup {
     { name = 'luasnip' },
     { name = "dotenv" }
   },
+
+
 }
+
+cmp.setup.filetype({ "sql" }, {
+  sources = {
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' },
+  }
+})
+
+cmp.setup.filetype({ "redis" }, {
+  sources = {
+    { name = 'buffer' },
+  }
+})

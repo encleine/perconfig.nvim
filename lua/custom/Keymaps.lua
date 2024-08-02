@@ -11,8 +11,8 @@ vim.keymap.set('n', 'd"', 'ldt"h', { silent = true })
 vim.keymap.set('n', "d'", "ldt'h", { silent = true })
 
 -- [[ Moving selected lines ]]
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { silent = true })
 
 -- [[ Moving current line ]]
 vim.keymap.set('n', '<M-k>', ":m -2<CR>", { silent = true })
@@ -44,7 +44,6 @@ end, { silent = true })
 
 -- [[ stops yanking after paste over ]]
 vim.keymap.set('x', 'p', 'P', { silent = true })
-
 
 
 -- [[ wraping text with parenthesis ]]
