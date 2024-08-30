@@ -61,3 +61,10 @@ mmap('{', '}')
 mmap('"', '"')
 mmap("'", "'")
 mmap("`", "`")
+
+[[ making and moving between tabs ]]
+
+vim.keymap.set('n', '<leader>l', ':tabNext <CR>', { silent = true })
+vim.keymap.set('n', '<leader>h', ':tabprevious <CR>', { silent = true })
+vim.keymap.set('n', '<leader>k', ':tabnew <CR>', { silent = true })
+vim.keymap.set('n', '<leader>j', '<C-w>T', { silent = true })
