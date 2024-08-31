@@ -29,7 +29,7 @@ local function foldfunc(args)
   end
 
   if args.virtnum ~= 0 then
-    string = string .. "┃"
+    sep = sep .. "┃"
   elseif closed and level == 1 then
     sep = sep .. "🮯"
   elseif closed then
