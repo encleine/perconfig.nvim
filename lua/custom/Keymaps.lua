@@ -6,10 +6,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- [[ Deleting string content ]]
-vim.keymap.set('n', 'd"', 'ldt"h', { silent = true })
-vim.keymap.set('n', "d'", "ldt'h", { silent = true })
-
 -- [[ Moving selected lines ]]
 vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { silent = true })
